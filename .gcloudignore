@@ -1,0 +1,4 @@
+# node & gatsby
+.cache
+node_modules
+.env*

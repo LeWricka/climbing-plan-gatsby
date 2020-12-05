@@ -1,0 +1,53 @@
+# Access the ssh key from Secret Manager
+steps:
+  - name: gcr.io/cloud-builders/gcloud
+    entrypoint: 'bash'
+    args: [ '-c', 'gcloud secrets versions access latest --secret=YOUR_GIT_ACCESS_KEY > /root/.ssh/id_bitbucket' ]
+    volumes:
+      - name: 'ssh'
+        path: /root/.ssh
+
+  # Set up git with key and domain
+  - name: 'gcr.io/cloud-builders/git'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        chmod 600 /root/.ssh/id_bitbucket
+        cat <<EOF >/root/.ssh/config
+        Hostname bitbucket.org
+        IdentityFile /root/.ssh/id_bitbucket
+        EOF
+        ssh-keyscan -t rsa bitbucket.org >> /root/.ssh/known_hosts
+        ssh-keyscan -t rsa contentful.com >> /root/.ssh/known_hosts
+    volumes:
+      - name: 'ssh'
+        path: /root/.ssh
+
+  # Connect to the repository
+  - name: 'gcr.io/cloud-builders/git'
+    args:
+      - clone
+      - --recurse-submodules
+      - git@bitbucket.org:USERNAME/gatsby-contentful.git
+    volumes:
+      - name: 'ssh'
+        path: /root/.ssh
+
+  - name: node
+    entrypoint: npm
+    dir: gatsby-contentful
+    args: ['install']
+
+  - name: node
+    entrypoint: npm
+    dir: gatsby-contentful
+    env:
+      - CONTENTFUL_SPACE_ID=XXXXXXXX
+      - CONTENTFUL_ACCESS_TOKEN=XXXXXXXX
+    args: ['run', 'build']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy']
+    dir: gatsby-contentful
+    timeout: '300s'
