@@ -2,8 +2,8 @@ runtime: python37
 service: default
 handlers:
   - url: /
-    static_files: public/blog/index.html
-    upload: public/events/index.html
+    static_files: public/index.html
+    upload: public/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)

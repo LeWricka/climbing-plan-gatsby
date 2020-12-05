@@ -2,7 +2,7 @@
 steps:
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: 'bash'
-    args: [ '-c', 'gcloud secrets versions access latest --secret=gatsby_github > /root/.ssh/id_github_gatsby' ]
+    args: [ '-c', 'gcloud secrets versions access latest --secret=gatsby_github > /root/.ssh/id_github' ]
     volumes:
       - name: 'ssh'
         path: /root/.ssh
@@ -13,7 +13,7 @@ steps:
     args:
       - '-c'
       - |
-        chmod 600 /root/.ssh/id_github_gatsby
+        chmod 600 /root/.ssh/id_github
         cat <<EOF >/root/.ssh/config
         Hostname github.com
         IdentityFile /root/.ssh/id_github
@@ -35,12 +35,12 @@ steps:
 
   - name: node
     entrypoint: npm
-    dir: gatsby-contentful
+    dir: climbing-plan-gatsby
     args: ['install']
 
   - name: node
     entrypoint: npm
-    dir: gatsby-contentful
+    dir: climbing-plan-gatsby
     env:
       - CONTENTFUL_SPACE_ID=yo3wh2ir3oj7
       - CONTENTFUL_ACCESS_TOKEN=3ZlJPvtkO9jwbXO7CAVPsHXDd8ULNllECTIigbjJzJ0
@@ -48,5 +48,5 @@ steps:
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy']
-    dir: gatsby-contentful
+    dir: climbing-plan-gatsby
     timeout: '300s'
