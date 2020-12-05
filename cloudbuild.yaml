@@ -2,7 +2,7 @@
 steps:
   - name: gcr.io/cloud-builders/gcloud
     entrypoint: 'bash'
-    args: [ '-c', 'gcloud secrets versions access latest --secret=YOUR_GIT_ACCESS_KEY > /root/.ssh/id_bitbucket' ]
+    args: [ '-c', 'gcloud secrets versions access latest --secret=gatsby_github > /root/.ssh/id_github_gatsby' ]
     volumes:
       - name: 'ssh'
         path: /root/.ssh
@@ -13,12 +13,12 @@ steps:
     args:
       - '-c'
       - |
-        chmod 600 /root/.ssh/id_bitbucket
+        chmod 600 /root/.ssh/id_github_gatsby
         cat <<EOF >/root/.ssh/config
-        Hostname bitbucket.org
-        IdentityFile /root/.ssh/id_bitbucket
+        Hostname github.com
+        IdentityFile /root/.ssh/id_github_gatsby
         EOF
-        ssh-keyscan -t rsa bitbucket.org >> /root/.ssh/known_hosts
+        ssh-keyscan -t rsa github.org >> /root/.ssh/known_hosts
         ssh-keyscan -t rsa contentful.com >> /root/.ssh/known_hosts
     volumes:
       - name: 'ssh'
@@ -29,7 +29,7 @@ steps:
     args:
       - clone
       - --recurse-submodules
-      - git@bitbucket.org:USERNAME/gatsby-contentful.git
+      - git@github.com:LeWricka/climbing-plan-gatsby.git
     volumes:
       - name: 'ssh'
         path: /root/.ssh
@@ -43,8 +43,8 @@ steps:
     entrypoint: npm
     dir: gatsby-contentful
     env:
-      - CONTENTFUL_SPACE_ID=XXXXXXXX
-      - CONTENTFUL_ACCESS_TOKEN=XXXXXXXX
+      - CONTENTFUL_SPACE_ID=yo3wh2ir3oj7
+      - CONTENTFUL_ACCESS_TOKEN=3ZlJPvtkO9jwbXO7CAVPsHXDd8ULNllECTIigbjJzJ0
     args: ['run', 'build']
 
   - name: 'gcr.io/cloud-builders/gcloud'
