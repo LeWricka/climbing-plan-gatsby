@@ -4,6 +4,9 @@ handlers:
   - url: /
     static_files: public/index.html
     upload: public/index.html
+  - url: /blog
+    static_files: public/blog/index.html
+    upload: public/blog/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)

@@ -19,13 +19,13 @@ const { spaceId, accessToken } = contentfulConfig
 
 if (!spaceId || !accessToken) {
   throw new Error(
-    'Contentful spaceId and the access token need to be provided.'
+    'Contentful spaceId and the access token need to be provided.',
   )
 }
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Climbing plan',
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [
@@ -37,5 +37,14 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
     },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    'gatsby-plugin-styled-components',
   ],
 }
