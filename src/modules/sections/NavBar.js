@@ -1,76 +1,83 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { withStyles } from '@material-ui/core/styles';
-import Link from '@material-ui/core/Link';
-import AppBar from '../../components/AppBar';
-import Toolbar, { styles as toolbarStyles } from '../../components/Toolbar';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
+import IconButton from '@material-ui/core/IconButton'
+import HomeIcon from '../../components/climbing_plan/HomeIcon'
+import { Hidden, List, ListItem, ListItemText } from '@material-ui/core'
+import SideDrawer from '../../components/climbing_plan/SideDrawer'
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  navDisplayFlex: {
+    display: `flex`,
+  },
+  linkText: {
+    textDecoration: `none`,
+    color: `white`
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    color: 'black',
+    width: 80,
+  },
   title: {
-    fontSize: 24,
+    flexGrow: 1,
+    color: 'white',
   },
-  placeholder: toolbarStyles(theme).root,
-  toolbar: {
-    justifyContent: 'space-between',
+  appBarTransparent: {
+    backgroundColor: 'rgb(179, 179, 179, 0.0)',
+    boxShadow: 'none',
   },
-  left: {
-    flex: 1,
+  appBarSolid: {
+    backgroundColor: 'rgb(179, 179, 179)',
   },
-  leftLinkActive: {
-    color: theme.palette.common.white,
-  },
-  right: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  rightLink: {
-    fontSize: 16,
-    color: theme.palette.common.white,
-    marginLeft: theme.spacing(3),
-  },
-  linkSecondary: {
-    color: theme.palette.secondary.main,
-  },
-});
+}))
 
-function NavBar(props) {
-  const { classes } = props;
+const navLinks = [
+  { title: `Home`, path: `/` },
+  { title: `Assessment`, path: `/assesment` },
+  { title: `Blog`, path: `/blog` },
+  { title: `Contact`, path: `/contact` },
+  { title: `FAQ`, path: `/faq` }
+];
+
+export default function ButtonAppBar() {
+  const classes = useStyles()
 
   return (
-    <div>
-      <AppBar position="fixed">
-        <Toolbar className={classes.toolbar}>
-          <div className={classes.left} />
-          <Link
-            variant="h6"
-            underline="none"
-            color="inherit"
-            className={classes.title}
-            href="/"
-          >
-            {'Climbing plan'}
-          </Link>
-          <div className={classes.right}>
-            <Link
-              variant="h6"
-              underline="none"
-              className={clsx(classes.rightLink, classes.linkSecondary)}
-              href="/blog"
+    <div className={classes.root}>
+      <AppBar position="fixed" className={classes.appBarTransparent}>
+        <Toolbar>
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <HomeIcon />
+          </IconButton>
+          <Typography variant="h6" className={classes.title}>
+            Climbing plan
+          </Typography>
+          <Hidden smDown>
+            <List
+              component="nav"
+              aria-labelledby="main navigation"
+              className={classes.navDisplayFlex}
             >
-              {'Blog'}
-            </Link>
-          </div>
+              {navLinks.map(({ title, path }) => (
+                <a href={path} key={title} className={classes.linkText}>
+                  <ListItem button>
+                    <ListItemText primary={title} />
+                  </ListItem>
+                </a>
+              ))}
+            </List>
+          </Hidden>
+          <Hidden smUp>
+            <SideDrawer navLinks={navLinks} />
+          </Hidden>
         </Toolbar>
       </AppBar>
-      <div className={classes.placeholder} />
     </div>
-  );
+  )
 }
-
-AppAppBar.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(NavBar);

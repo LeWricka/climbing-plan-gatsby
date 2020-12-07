@@ -2,15 +2,14 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-function ContentfulImage(props) {
-  const { classes } = props
+function HomeIcon() {
   const data = useStaticQuery(graphql`
         query {
-          allContentfulAsset(filter: {description: {eq: "home_main_image"}}) {
+          allContentfulAsset(filter: {title: {eq: "logo"}}) {
             edges {
               node {
                 title
-                fluid (quality: 100) {
+                fluid {
                   ...GatsbyContentfulFluid
                 }
               }
@@ -18,10 +17,13 @@ function ContentfulImage(props) {
           }
         }
       `)
+
   console.log(data)
   return (
-    <Img fluid={data.allContentfulAsset.edges[0].node.fluid} key={data.allContentfulAsset.edges[0].node.title} alt={data.allContentfulAsset.edges[0].node.title} />
+    <section style={{ width: '100%' }}>
+      <Img fluid={data.allContentfulAsset.edges[0].node.fluid} key={data.allContentfulAsset.edges[0].node.title} alt={data.allContentfulAsset.edges[0].node.title} />
+    </section>
   )
 }
 
-export default (ContentfulImage)
+export default (HomeIcon)

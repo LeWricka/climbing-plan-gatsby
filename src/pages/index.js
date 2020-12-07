@@ -1,18 +1,19 @@
-import React from 'react';
-import withRoot from '../modules/withRoot';
-import AppAppBar from '../modules/views/AppAppBar'
-import ProductHero from '../modules/views/ProductHero'
+import React from 'react'
+import withRoot from '../modules/withRoot'
 import { graphql } from 'gatsby'
 import HomeBanner from '../modules/sections/HomeBanner'
-
-
+import NavBar from '../modules/sections/NavBar'
+import NavBar2 from '../modules/sections/NavBar2'
 
 class RootIndex extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <AppAppBar />
-        <HomeBanner />
+        <section>
+          <NavBar />
+          {/*<NavBar2 />*/}
+          <HomeBanner />
+        </section>
         {/*<ProductValues />*/}
         {/*<ProductCategories />*/}
         {/*<ProductHowItWorks />*/}

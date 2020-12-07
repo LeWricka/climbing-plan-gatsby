@@ -7,8 +7,10 @@
     "url": "https://github.com/contentful-userland/gatsby-contentful-starter/issues"
   },
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.2",
     "babel-plugin-styled-components": "^1.12.0",
+    "gatsby-background-image": "^1.3.1",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-material-ui": "^2.1.10",
     "gatsby-plugin-react-helmet": "^3.2.4",

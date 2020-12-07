@@ -1,11 +1,9 @@
 import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Image from '../../components/climbing_plan/ContentfulImage'
+import HeroImage from '../../components/climbing_plan/HeroImage'
+import {HOME_IMAGE} from '../../providers/constants'
 
-function HomeBanner() {
+export default function HomeBanner() {
   return (
-      <Image />
+      <HeroImage imageName={HOME_IMAGE}/>
   )
 }
-
-export default (HomeBanner)

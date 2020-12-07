@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
-import AppBar from '../../components/AppBar';
-import Toolbar, { styles as toolbarStyles } from '../../components/Toolbar';
+import AppBar from '../components/AppBar';
+import Toolbar, { styles as toolbarStyles } from '../components/Toolbar';
 
 const styles = (theme) => ({
   title: {
@@ -48,18 +48,27 @@ function AppAppBar(props) {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/"
+            href="/premium-themes/onepirate/"
           >
-            {'Climbing plan 2brodasStyla'}
+            {'onepirate'}
           </Link>
           <div className={classes.right}>
+            <Link
+              color="inherit"
+              variant="h6"
+              underline="none"
+              className={classes.rightLink}
+              href="/premium-themes/onepirate/sign-in/"
+            >
+              {'Sign In'}
+            </Link>
             <Link
               variant="h6"
               underline="none"
               className={clsx(classes.rightLink, classes.linkSecondary)}
-              href="/blog"
+              href="/premium-themes/onepirate/sign-up/"
             >
-              {'Blog'}
+              {'Sign Up'}
             </Link>
           </div>
         </Toolbar>
