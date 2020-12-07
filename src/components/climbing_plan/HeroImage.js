@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 function HeroImage() {
   const data = useStaticQuery(graphql`
@@ -20,9 +20,22 @@ function HeroImage() {
 
   console.log(data)
   return (
-    <section style={{ width: '100%' }}>
-      <Img fluid={data.allContentfulAsset.edges[0].node.fluid} key={data.allContentfulAsset.edges[0].node.title} alt={data.allContentfulAsset.edges[0].node.title} />
-    </section>
+      <BackgroundImage
+        fluid={data.allContentfulAsset.edges[0].node.fluid}
+        style={{
+          height: `100vh`,
+          width: `100vw`,
+          backgroundColor: `transparent`,
+          backgroundSize: `cover`,
+          backgroundPosition: `center center`,
+          display: `flex`,
+          alignItems: `center`,
+        }}
+      >
+          <h2>
+            This is a test of multiple background images.
+          </h2>
+      </BackgroundImage>
   )
 }
 
