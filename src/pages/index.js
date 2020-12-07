@@ -3,7 +3,7 @@ import withRoot from '../modules/withRoot'
 import { graphql } from 'gatsby'
 import HomeBanner from '../modules/sections/HomeBanner'
 import NavBar from '../modules/sections/NavBar'
-import NavBar2 from '../modules/sections/NavBar2'
+import Services from '../modules/sections/Services'
 
 class RootIndex extends React.Component {
   render() {
@@ -11,8 +11,8 @@ class RootIndex extends React.Component {
       <React.Fragment>
         <section>
           <NavBar />
-          {/*<NavBar2 />*/}
           <HomeBanner />
+          <Services />
         </section>
         {/*<ProductValues />*/}
         {/*<ProductCategories />*/}

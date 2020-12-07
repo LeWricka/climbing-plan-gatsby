@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'start',
     flexDirection: 'column',
     justifyContent: 'center',
-    color: 'white',
     paddingLeft: 30
   },
   button: {
     minWidth: 200,
+    backgroundColor: theme.palette.secondary.light
   },
   h5: {
     marginBottom: theme.spacing(4),
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   more: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
 }))
 
@@ -37,12 +37,12 @@ export default function HomeBanner() {
   const classes = useStyles()
   const data = useStaticQuery(graphql`
         query {
-          allContentfulAsset(filter: {title: {eq: "home_hero"}}) {
+          allContentfulAsset(filter: {title: {eq: "home-hero"}}) {
             edges {
               node {
                 title
-                fluid {
-                  ...GatsbyContentfulFluid
+                fluid(quality:100) {
+                  ...GatsbyContentfulFluid_withWebp
                 }
               }
             }
@@ -57,25 +57,24 @@ export default function HomeBanner() {
         fluid={data.allContentfulAsset.edges[0].node.fluid}
         className={classes.background}
       >
-        <Typography color="inherit" align="center" variant="h1" marked="center" >
+        <Typography align="center" variant="h1" marked="center" >
           BEST
         </Typography>
-        <Typography color="inherit" align="center" variant="h1" marked="center" >
+        <Typography align="center" variant="h1" marked="center" >
           CLIMBING
         </Typography>
-        <Typography color="inherit" align="center" variant="h1" marked="center" >
+        <Typography align="center" variant="h1" marked="center" >
           TRAINING
         </Typography>
-        <Typography color="inherit" align="center" variant="h1" marked="center" >
+        <Typography align="center" variant="h1" marked="center" >
           PROGRAMS
         </Typography>
-        <Typography color="inherit" align="center" variant="h5" className={classes.h5}>
+        <Typography align="center" variant="h5" className={classes.h5}>
           How to train for climbing
         </Typography>
         <Button
-          color="primary"
-          variant="outlined"
           size="large"
+          variant="contained"
           className={classes.button}
           component="a"
           href="/get-my-personalized-climbing-training-program"

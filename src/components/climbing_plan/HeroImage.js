@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 function HeroImage() {
   const data = useStaticQuery(graphql`
         query {
-          allContentfulAsset(filter: {title: {eq: "home_hero"}}) {
+          allContentfulAsset(filter: {title: {eq: "logo"}}) {
             edges {
               node {
                 title
