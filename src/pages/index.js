@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import HomeBanner from '../modules/sections/HomeBanner'
 import NavBar from '../modules/sections/NavBar'
 import Services from '../modules/sections/Services'
+import ProgramPreview from '../modules/sections/ProgramPreview'
 
 class RootIndex extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class RootIndex extends React.Component {
           <NavBar />
           <HomeBanner />
           <Services />
+          <ProgramPreview />
         </section>
         {/*<ProductValues />*/}
         {/*<ProductCategories />*/}

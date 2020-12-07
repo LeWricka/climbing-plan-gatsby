@@ -33,19 +33,19 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
   image: {
-    width: '100%'
+    width: '90%'
   },
   title: {
-    marginTop: theme.spacing(1),
-    marginBottom: theme.spacing(3),
+    marginTop: theme.spacing(5),
+    marginBottom: theme.spacing(5),
   },
   divider: {
-    marginTop: theme.spacing(2),
+    marginTop: theme.spacing(5),
     width: '100%',
     background: theme.palette.primary.light
   },
   button: {
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(10),
     maxWidth: 300,
     backgroundColor: theme.palette.secondary.light
   }
@@ -79,7 +79,6 @@ export default function Services() {
   const mountain3 = data.allContentfulAsset.edges.find(
     image => image.node.title === MOUNTAIN_3
   )
-  console.log(mountain1)
 
   return (
     <section className={classes.root}>
@@ -91,8 +90,8 @@ export default function Services() {
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
               <Img className={classes.image} fluid={mountain1.node.fluid} key={mountain1.node.title} alt={mountain1.node.title} />
-              <Typography color="inherit" variant="h6" className={classes.title}>
-                Full range of detailed workouts
+              <Typography color="inherit" variant="h5" className={classes.title}>
+                Fully detailed workouts
               </Typography>
               <Typography align="center"  color="inherit">
                 {'+ 200 exercises for beginners and experienced climbers'}
@@ -102,7 +101,7 @@ export default function Services() {
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
               <Img className={classes.image} fluid={mountain2.node.fluid} key={mountain2.node.title} alt={mountain2.node.title} />
-              <Typography color="inherit" variant="h6" className={classes.title}>
+              <Typography color="inherit" variant="h5" className={classes.title}>
                 Personalised to your goals
               </Typography>
               <Typography align="center" color="inherit">
@@ -113,12 +112,11 @@ export default function Services() {
           <Grid item xs={12} md={4}>
             <div className={classes.item}>
               <Img className={classes.image} fluid={mountain3.node.fluid} key={mountain3.node.title} alt={mountain3.node.title} />
-              <Typography color="inherit" variant="h6" className={classes.title}>
-                Exclusive rates
+              <Typography color="inherit" variant="h5" className={classes.title}>
+                Personalised to your goals
               </Typography>
               <Typography align="center" color="inherit">
-                {'By registering, you will access specially negotiated rates '}
-                {'that you will not find anywhere else.'}
+                {'Power, power-endurance, endurance, conditioning and all-in'}
               </Typography>
             </div>
           </Grid>

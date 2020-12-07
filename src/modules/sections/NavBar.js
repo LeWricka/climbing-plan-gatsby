@@ -7,7 +7,6 @@ import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '../../components/climbing_plan/HomeIcon'
 import { Hidden, List, ListItem, ListItemText } from '@material-ui/core'
 import SideDrawer from '../../components/climbing_plan/SideDrawer'
-import Button from '../../components/Button'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
 const navLinks = [
   { title: `Home`, path: `/`},
-  { title: `Assessment`, path: `/assesment` },
+  { title: `Assessment`, path: `/assessment` },
   { title: `Pricing`, path: `/pricing` },
   { title: `Blog`, path: `/blog` },
   { title: `Contact`, path: `/contact` },
