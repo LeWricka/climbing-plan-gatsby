@@ -6,6 +6,7 @@ import Img from 'gatsby-image'
 import Layout from '../components/layout'
 
 import heroStyles from '../components/hero.module.css'
+import NavBar from '../modules/sections/NavBar'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -15,7 +16,7 @@ class BlogPostTemplate extends React.Component {
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
-          <Helmet title={`${post.title} | ${siteTitle}`} />
+          <NavBar forceSolid={true} />
           <div className={heroStyles.hero}>
             <Img
               className={heroStyles.heroImage}
@@ -23,7 +24,7 @@ class BlogPostTemplate extends React.Component {
               fluid={post.heroImage.fluid}
             />
           </div>
-          <div className="wrapper">
+          <div className="blog-entry-wrapper">
             <h1 className="section-headline">{post.title}</h1>
             <p
               style={{

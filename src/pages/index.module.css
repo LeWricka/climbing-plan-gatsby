@@ -1,7 +1,10 @@
 .hero {
-  height: 100vh;
-  background-image: url(https://images.unsplash.com/photo-1500417148159-68083bd7333a);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 61.8vh;
+  max-height: 400px;
+  background: #e1e1e1;
+  font-size: 2em;
+  overflow: hidden;
 }

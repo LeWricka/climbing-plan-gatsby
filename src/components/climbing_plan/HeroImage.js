@@ -32,9 +32,6 @@ function HeroImage() {
           alignItems: `center`,
         }}
       >
-          <h2>
-            This is a test of multiple background images.
-          </h2>
       </BackgroundImage>
   )
 }

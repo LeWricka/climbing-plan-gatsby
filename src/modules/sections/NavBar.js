@@ -7,6 +7,7 @@ import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '../../components/climbing_plan/HomeIcon'
 import { Hidden, List, ListItem, ListItemText, useScrollTrigger } from '@material-ui/core'
 import SideDrawer from '../../components/climbing_plan/SideDrawer'
+import PropTypes from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
   },
   appBarSolid: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: '#323232',
   },
   button: {
     color: theme.palette.primary.light
@@ -49,16 +50,16 @@ const navLinks = [
   { title: `FAQ`, path: `/faq` }
 ];
 
-export default function ButtonAppBar() {
+export default function NavBar({forceSolid=false, threshold=620}) {
   const classes = useStyles()
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 660
+    threshold: threshold
   });
   return (
     <div className={classes.root}>
       <AppBar position="fixed" className={`${classes.appBarTransparent} ${
-        trigger === false ? '' : classes.appBarSolid
+        (trigger === false && !forceSolid) ? '' : classes.appBarSolid
         }`}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -90,3 +91,8 @@ export default function ButtonAppBar() {
     </div>
   )
 }
+
+NavBar.propTypes = {
+  showSolid: PropTypes.bool.isRequired,
+  threshold: PropTypes.number.isRequired,
+};

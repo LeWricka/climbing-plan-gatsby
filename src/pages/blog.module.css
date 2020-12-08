@@ -8,3 +8,8 @@
   font-size: 2em;
   overflow: hidden;
 }
+
+body{
+  background-color: #323232 !important;
+  color: white;
+}
