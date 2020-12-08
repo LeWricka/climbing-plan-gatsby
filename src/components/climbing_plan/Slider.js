@@ -6,6 +6,10 @@ import { PROGRAM_PREVIEW_1, PROGRAM_PREVIEW_2, PROGRAM_PREVIEW_3, PROGRAM_PREVIE
 import Img from 'gatsby-image'
 
 const useStyles = makeStyles((theme) => ({
+  carrousel: {
+    marginTop: theme.spacing(5),
+    width: "45%"
+  },
   image: {
     width: '100%',
   },
@@ -27,8 +31,6 @@ export default function Slider() {
           }
         }
       `)
-  console.log('Program preview')
-  console.log(data)
   const items = []
   items.push(data.allContentfulAsset.edges.find(
     image => image.node.title === PROGRAM_PREVIEW_1
@@ -40,15 +42,15 @@ export default function Slider() {
     image => image.node.title === PROGRAM_PREVIEW_3
   ))
   items.push(data.allContentfulAsset.edges.find(
-    image => image.node.title === PROGRAM_PREVIEW_4
+    image => image.node.title === PROGRAM_PREVIEW_4,
   ))
 
+  console.log('Review Items')
   console.log(items)
 
   return (
-    <div>
       <Carousel
-        className="Example"
+        className={classes.carrousel}
         autoPlay="true"
         timer={500}
         animation="fade"
@@ -63,6 +65,5 @@ export default function Slider() {
           })
         }
       </Carousel>
-    </div>
   )
 }

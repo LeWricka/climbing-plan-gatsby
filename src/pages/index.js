@@ -1,6 +1,5 @@
 import React from 'react'
 import withRoot from '../modules/withRoot'
-import { graphql } from 'gatsby'
 import HomeBanner from '../modules/sections/HomeBanner'
 import NavBar from '../modules/sections/NavBar'
 import Services from '../modules/sections/Services'
@@ -37,15 +36,6 @@ class RootIndex extends React.Component {
 
 export default withRoot(RootIndex)
 
-export const pageQuery = graphql`
-  query HomeImage{
-     site {
-      siteMetadata {
-        title
-      }
-    }
-  }
- `
 
 // import React from 'react'
 // import { graphql } from 'gatsby'

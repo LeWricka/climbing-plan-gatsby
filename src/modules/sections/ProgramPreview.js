@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.primary.dark,
     color: 'white',
+    alignItems: 'start',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
   container: {
     marginTop: theme.spacing(5),
@@ -18,10 +21,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  slider: {
-    width: 1000,
-    height: 2000
   }
 }));
 
@@ -34,7 +33,7 @@ export default function ProgramPreview() {
         <Typography color="inherit" variant="h4" className={classes.title}>
           Preview a program
         </Typography>
-       <Slider className={classes.slider}/>
+       <Slider />
       </Container>
     </section>
   );
