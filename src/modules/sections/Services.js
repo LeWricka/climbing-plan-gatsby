@@ -39,15 +39,15 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
   },
+  button: {
+    marginTop: theme.spacing(10),
+    maxWidth: 300,
+    backgroundColor: theme.palette.secondary.light
+  },
   divider: {
     marginTop: theme.spacing(5),
     width: '100%',
     background: theme.palette.primary.light
-  },
-  button: {
-    marginTop: theme.spacing(15),
-    maxWidth: 300,
-    backgroundColor: theme.palette.secondary.light
   }
 }));
 
@@ -121,7 +121,6 @@ export default function Services() {
             </div>
           </Grid>
         </Grid>
-        <Divider variant="fullWidth" className={classes.divider}/>
         <Button
           align="center"
           size="large"
@@ -131,6 +130,7 @@ export default function Services() {
         >
           Get started
         </Button>
+        <Divider variant="fullWidth" className={classes.divider}/>
       </Container>
     </section>
   );

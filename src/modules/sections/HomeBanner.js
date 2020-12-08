@@ -49,7 +49,7 @@ export default function HomeBanner() {
           }
         }
       `)
-
+  console.log('Hero image')
   console.log(data)
   return (
     <div className={classes.root}>

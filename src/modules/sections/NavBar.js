@@ -5,7 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '../../components/climbing_plan/HomeIcon'
-import { Hidden, List, ListItem, ListItemText } from '@material-ui/core'
+import { Hidden, List, ListItem, ListItemText, useScrollTrigger } from '@material-ui/core'
 import SideDrawer from '../../components/climbing_plan/SideDrawer'
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: 'none',
   },
   appBarSolid: {
-    backgroundColor: 'rgb(179, 179, 179)',
+    backgroundColor: theme.palette.primary.dark,
   },
   button: {
     color: theme.palette.primary.light
@@ -51,10 +51,15 @@ const navLinks = [
 
 export default function ButtonAppBar() {
   const classes = useStyles()
-
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 660
+  });
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={classes.appBarTransparent}>
+      <AppBar position="fixed" className={`${classes.appBarTransparent} ${
+        trigger === false ? '' : classes.appBarSolid
+        }`}>
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <HomeIcon />
