@@ -30,10 +30,9 @@ export default function Slider() {
   console.log('Program preview')
   console.log(data)
   const items = []
-  let image = data.allContentfulAsset.edges.find(
+  items.push(data.allContentfulAsset.edges.find(
     image => image.node.title === PROGRAM_PREVIEW_1
-  )
-  items.push(image)
+  ))
   items.push(data.allContentfulAsset.edges.find(
     image => image.node.title === PROGRAM_PREVIEW_2
   ))
@@ -47,7 +46,7 @@ export default function Slider() {
   console.log(items)
 
   return (
-    <div style={{ marginTop: '50px', color: '#494949' }}>
+    <div>
       <Carousel
         className="Example"
         autoPlay="true"
@@ -57,9 +56,6 @@ export default function Slider() {
         timeout={500}
         navButtonsAlwaysVisible="true"
         navButtonsAlwaysInvisible="true"
-        next={(now, previous) => console.log(`Next User Callback: Now displaying child${now}. Previously displayed child${previous}`)}
-        prev={(now, previous) => console.log(`Prev User Callback: Now displaying child${now}. Previously displayed child${previous}`)}
-        onChange={(now, previous) => console.log(`OnChange User Callback: Now displaying child${now}. Previously displayed child${previous}`)}
       >
         {
           items.map((item) => {

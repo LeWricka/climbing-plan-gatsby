@@ -8,8 +8,14 @@ handlers:
     static_files: public/blog/index.html
     upload: public/blog/index.html
   - url: /assessment
-    static_files: public/assessmeent/index.html
-    upload: public/assessmeent/index.html
+    static_files: public/assessment/index.html
+    upload: public/assessment/index.html
+  - url: /blog/
+    static_files: public/blog/index.html
+    upload: public/blog/index.html
+  - url: /assessment/
+    static_files: public/assessment/index.html
+    upload: public/assessment/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)

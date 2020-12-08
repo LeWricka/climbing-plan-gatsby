@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(30),
+    marginBottom: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     background: theme.palette.primary.light
   },
   button: {
-    marginTop: theme.spacing(10),
+    marginTop: theme.spacing(15),
     maxWidth: 300,
     backgroundColor: theme.palette.secondary.light
   }

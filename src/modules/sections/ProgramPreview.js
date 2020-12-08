@@ -20,7 +20,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center'
   },
   slider: {
-    width: '1000'
+    width: 1000,
+    height: 2000
   }
 }));
 
@@ -33,7 +34,7 @@ export default function ProgramPreview() {
         <Typography color="inherit" variant="h4" className={classes.title}>
           Preview a program
         </Typography>
-        <Slider className={classes.slider}/>
+       <Slider className={classes.slider}/>
       </Container>
     </section>
   );
