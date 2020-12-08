@@ -35,9 +35,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex'
   },
   icon: {
-    width: 48,
-    height: 48,
-    display: 'flex',
+    width: '48px',
+    height: '48px',
     marginRight: theme.spacing(1),
   },
   list: {
@@ -99,8 +98,8 @@ export default function Footer() {
                 spacing={2}
               >
                 <Grid item className={classes.icons}>
-                  <a href="https://www.instagram.com/climbingplan/" className={classes.icon}>
-                    <img src="/climbingplan/instagram-logo.webp" alt="Instagram" />
+                  <a href="https://www.instagram.com/climbingplan/" >
+                    <img className={classes.icon} src="/climbingplan/instagram-logo.png" alt="Instagram" />
                   </a>
                 </Grid>
                 <Grid item>
