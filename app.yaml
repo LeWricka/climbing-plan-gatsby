@@ -7,6 +7,9 @@ handlers:
   - url: /blog
     static_files: public/blog/index.html
     upload: public/blog/index.html
+  - url: /assessment
+    static_files: public/assessmeent/index.html
+    upload: public/assessmeent/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)
