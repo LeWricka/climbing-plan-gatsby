@@ -5,6 +5,7 @@ import NavBar from '../modules/sections/NavBar'
 import Services from '../modules/sections/Services'
 import ProgramPreview from '../modules/sections/ProgramPreview'
 import Helmet from 'react-helmet'
+import Footer from '../modules/sections/Footer'
 
 class RootIndex extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class RootIndex extends React.Component {
           <HomeBanner />
           <Services />
           <ProgramPreview />
+          <Footer />
         </section>
         {/*<ProductValues />*/}
         {/*<ProductCategories />*/}
