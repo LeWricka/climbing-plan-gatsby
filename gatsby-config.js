@@ -27,7 +27,7 @@ module.exports = {
   siteMetadata: {
     title: 'Climbing plan',
   },
-  pathPrefix: '/gatsby-contentful-starter',
+  pathPrefix: '/climbing-plan',
   plugins: [
     {
       resolve: 'gatsby-source-contentful',
