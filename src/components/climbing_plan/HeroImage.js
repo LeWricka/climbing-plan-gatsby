@@ -18,7 +18,6 @@ function HeroImage() {
         }
       `)
 
-  console.log(data)
   return (
       <BackgroundImage
         fluid={data.allContentfulAsset.edges[0].node.fluid}

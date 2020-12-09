@@ -2,14 +2,14 @@ import React from 'react'
 import Button from '../../components/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import { graphql, useStaticQuery } from 'gatsby'
-import BackgroundImage from 'gatsby-background-image'
 import Typography from '@material-ui/core/Typography'
+import BackgroundImage from 'gatsby-background-image'
 
 const useStyles = makeStyles((theme) => ({
   background: {
     height: '100vh',
     width: '100vw',
-    backgroundColor: 'transparent',
+    backgroundColor: theme.palette.primary.dark,
     backgroundSize: 'cover',
     display: 'flex',
     alignItems: 'start',
@@ -41,7 +41,7 @@ export default function HomeBanner() {
             edges {
               node {
                 title
-                fluid(quality:100) {
+                fluid (quality:100){
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
@@ -49,8 +49,6 @@ export default function HomeBanner() {
           }
         }
       `)
-  console.log('Hero image')
-  console.log(data)
   return (
     <div className={classes.root}>
       <BackgroundImage

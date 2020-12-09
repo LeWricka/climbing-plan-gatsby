@@ -39,7 +39,7 @@ steps:
     args: ['install']
 
   - name: node
-    entrypoint: npm
+    entrypoint: yarn
     dir: climbing-plan-gatsby
     env:
       - CONTENTFUL_SPACE_ID=yo3wh2ir3oj7

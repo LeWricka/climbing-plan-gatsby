@@ -20,11 +20,9 @@ function RemoteImage(props) {
         }
       `)
 
-  console.log(data)
   const image = data.allContentfulAsset.edges.find(
     image => image.node.title === imageName
   )
-  console.log(image)
 
   return (
     <Img fluid={image.node.fluid} key={image.node.title} alt={image.node.title} />

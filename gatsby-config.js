@@ -26,6 +26,8 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: 'Climbing plan',
+    description: 'Give any athlete access to quality, personalised and affordable training plans',
+    author: 'ClimbingPlan',
   },
   pathPrefix: '/climbing-plan',
   plugins: [
@@ -43,9 +45,6 @@ module.exports = {
     },
     'gatsby-plugin-styled-components',
     'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-offline'
   ],
 }

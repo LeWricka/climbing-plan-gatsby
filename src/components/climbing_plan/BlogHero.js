@@ -18,7 +18,6 @@ function BlogHero() {
         }
       `)
 
-  console.log(data)
   return (
     <section style={{ width: '100%' }}>
       <Img fluid={data.allContentfulAsset.edges[0].node.fluid} key={data.allContentfulAsset.edges[0].node.title} alt={data.allContentfulAsset.edges[0].node.title} />

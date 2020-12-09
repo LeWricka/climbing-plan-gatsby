@@ -68,8 +68,6 @@ export default function Services() {
         }
       `)
 
-  console.log('Services')
-  console.log(data)
   const mountain1 = data.allContentfulAsset.edges.find(
     image => image.node.title === MOUNTAIN_1
   )
@@ -126,7 +124,7 @@ export default function Services() {
           size="large"
           variant="contained"
           className={classes.button}
-          href="/get-my-personalized-climbing-training-program"
+          href="/assessment"
         >
           Get started
         </Button>

@@ -45,8 +45,6 @@ export default function Slider() {
     image => image.node.title === PROGRAM_PREVIEW_4,
   ))
 
-  console.log('Review Items')
-  console.log(items)
 
   return (
       <Carousel
