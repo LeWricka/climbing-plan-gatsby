@@ -62,10 +62,10 @@ export default function NavBar({forceSolid=false, threshold=620}) {
         (trigger === false && !forceSolid) ? '' : classes.appBarSolid
         }`}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton href="/" edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <HomeIcon />
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography href="/" variant="h6" className={classes.title}>
             Climbing plan
           </Typography>
           <Hidden smDown>
@@ -93,6 +93,6 @@ export default function NavBar({forceSolid=false, threshold=620}) {
 }
 
 NavBar.propTypes = {
-  showSolid: PropTypes.bool.isRequired,
-  threshold: PropTypes.number.isRequired,
+  showSolid: PropTypes.bool,
+  threshold: PropTypes.number,
 };

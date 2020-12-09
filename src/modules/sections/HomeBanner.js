@@ -77,7 +77,7 @@ export default function HomeBanner() {
           variant="contained"
           className={classes.button}
           component="a"
-          href="/get-my-personalized-climbing-training-program"
+          href="/assessment"
         >
           Get started
         </Button>
