@@ -25,12 +25,6 @@ class RootIndex extends React.Component {
           <ProgramPreview />
           <Footer />
         </section>
-        {/*<ProductValues />*/}
-        {/*<ProductCategories />*/}
-        {/*<ProductHowItWorks />*/}
-        {/*<ProductCTA />*/}
-        {/*<ProductSmokingHero />*/}
-        {/*<AppFooter />*/}
       </React.Fragment>
     )
   }

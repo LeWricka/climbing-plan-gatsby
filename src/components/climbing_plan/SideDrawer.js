@@ -13,12 +13,13 @@ import { useState } from "react";
 const useStyles = makeStyles({
   list: {
     width: 250,
+    height: '100vh',
     backgroundColor: '#323232'
   },
   linkText: {
     textDecoration: `none`,
     textTransform: `uppercase`,
-    color: `black`
+    color: `white`
   }
 });
 
@@ -69,7 +70,6 @@ const SideDrawer = ({ navLinks }) => {
       <Drawer
         anchor="right"
         open={state.right}
-        onOpen={toggleDrawer("right", true)}
         onClose={toggleDrawer("right", false)}
       >
         {sideDrawerList("right")}
