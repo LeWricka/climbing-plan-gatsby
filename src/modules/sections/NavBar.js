@@ -83,7 +83,7 @@ export default function NavBar({forceSolid=false, threshold=620}) {
               ))}
             </List>
           </Hidden>
-          <Hidden smUp>
+          <Hidden mdUp>
             <SideDrawer navLinks={navLinks} />
           </Hidden>
         </Toolbar>
