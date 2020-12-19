@@ -45,7 +45,6 @@ export default function Slider() {
     image => image.node.title === PROGRAM_PREVIEW_4,
   ))
 
-
   return (
       <Carousel
         className={classes.carrousel}

@@ -1,0 +1,19 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 61.8vh;
+  max-height: 400px;
+  background: #e1e1e1;
+  font-size: 2em;
+  overflow: hidden;
+}
+
+.accordion {
+  background-color: #323232;
+}
+
+body{
+  background-color: #323232 !important;
+  color: white;
+}

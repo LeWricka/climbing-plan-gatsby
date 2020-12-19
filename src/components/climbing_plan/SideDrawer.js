@@ -60,7 +60,7 @@ const SideDrawer = ({ navLinks }) => {
   return (
     <React.Fragment>
       <IconButton
-        edge="start"
+        edge="end"
         aria-label="menu"
         onClick={toggleDrawer("right", true)}
       >

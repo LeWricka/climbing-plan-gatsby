@@ -13,12 +13,17 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  toolbar: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   navDisplayFlex: {
     display: `flex`,
   },
   linkText: {
     textDecoration: `none`,
-    color: `white`
+    color: `white`,
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -37,38 +42,38 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#323232',
   },
   button: {
-    color: theme.palette.primary.light
-  }
+    color: theme.palette.primary.light,
+  },
 }))
 
 const navLinks = [
-  { title: `Home`, path: `/`},
+  { title: `Home`, path: `/` },
   { title: `Assessment`, path: `/assessment` },
   { title: `Pricing`, path: `/pricing` },
   { title: `Blog`, path: `/blog` },
   { title: `Contact`, path: `/contact` },
-  { title: `FAQ`, path: `/faq` }
-];
+  { title: `FAQ`, path: `/faq` },
+]
 
-export default function NavBar({forceSolid=false, threshold=620}) {
+export default function NavBar({ forceSolid = false, threshold = 620 }) {
   const classes = useStyles()
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: threshold
-  });
+    threshold: threshold,
+  })
   return (
     <div className={classes.root}>
-      <AppBar position="fixed" className={`${classes.appBarTransparent} ${
+      <AppBar position="fixed" className={`${threshold === 0 ? classes.appBarSolid : classes.appBarTransparent} ${
         (trigger === false && !forceSolid) ? '' : classes.appBarSolid
-        }`}>
-        <Toolbar>
+      }`}>
+        <Toolbar className={classes.toolbar}>
           <IconButton href="/" edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <HomeIcon />
           </IconButton>
-          <Typography href="/" variant="h6" className={classes.title}>
-            Climbing plan
-          </Typography>
           <Hidden smDown>
+            <Typography href="/" variant="h6" className={classes.title}>
+              Climbing plan
+            </Typography>
             <List
               component="nav"
               aria-labelledby="main navigation"
@@ -84,7 +89,7 @@ export default function NavBar({forceSolid=false, threshold=620}) {
             </List>
           </Hidden>
           <Hidden mdUp>
-            <SideDrawer navLinks={navLinks} />
+            <SideDrawer edge="end" navLinks={navLinks} />
           </Hidden>
         </Toolbar>
       </AppBar>
@@ -95,4 +100,4 @@ export default function NavBar({forceSolid=false, threshold=620}) {
 NavBar.propTypes = {
   showSolid: PropTypes.bool,
   threshold: PropTypes.number,
-};
+}
