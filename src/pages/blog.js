@@ -6,6 +6,7 @@ import styles from './blog.module.css'
 import ArticlePreview from '../components/article-preview'
 import BlogHero from '../components/climbing_plan/BlogHero'
 import NavBar from '../modules/sections/NavBar'
+import Footer from '../modules/sections/Footer'
 
 class BlogIndex extends React.Component {
   render() {

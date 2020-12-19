@@ -4,6 +4,7 @@ import SimpleAccordion from '../components/climbing_plan/SimpleAccordion'
 import NavBar from '../modules/sections/NavBar'
 import styles from './blog.module.css'
 import FaqHero from '../components/climbing_plan/FaqHero'
+import Footer from '../modules/sections/Footer'
 
 const faqs = [
   { title: 'How does climbingPlan work?', contents: ['1. We carry out an assessment to know your necessities and prepare a personalised training.\n 2. Our algorithm prepares a personalised training program for you, we revise it and send it to you asap to your email in a pdf filetype which you could print or take everywhere.\n'
