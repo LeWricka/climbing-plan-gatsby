@@ -23,6 +23,12 @@ handlers:
   - url: /faq/
     static_files: public/faq/index.html
     upload: public/faq/index.html
+  - url: /contact
+    static_files: public/contact/index.html
+    upload: public/contact/index.html
+  - url: /contact/
+    static_files: public/contact/index.html
+    upload: public/contact/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)
