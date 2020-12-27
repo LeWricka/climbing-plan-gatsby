@@ -2,7 +2,7 @@ import React from 'react'
 import withRoot from '../modules/withRoot'
 import NavBar from '../modules/sections/NavBar'
 import Helmet from 'react-helmet'
-import ContactData from '../modules/sections/ContactData'
+import Pricing from '../modules/sections/Pricing'
 
 class RootIndex extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class RootIndex extends React.Component {
         </div>
         <section>
           <NavBar />
-          <ContactData />
+          <Pricing />
         </section>
       </React.Fragment>
     )

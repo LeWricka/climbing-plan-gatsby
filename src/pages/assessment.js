@@ -1,6 +1,7 @@
 import React from 'react'
 import { ReactTypeformEmbed } from 'react-typeform-embed'
 import NavBar from '../modules/sections/NavBar'
+import styles from './assessment.module.css'
 
 class Assessment extends React.Component {
   render() {

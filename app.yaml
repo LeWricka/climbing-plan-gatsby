@@ -29,6 +29,12 @@ handlers:
   - url: /contact/
     static_files: public/contact/index.html
     upload: public/contact/index.html
+  - url: /pricing
+    static_files: public/pricing/index.html
+    upload: public/pricing/index.html
+  - url: /pricing/
+    static_files: public/pricing/index.html
+    upload: public/pricing/index.html
   - url: /(.*)
     static_files: public/\1
     upload: public/(.*)
