@@ -7,7 +7,7 @@ import Pricing from '../modules/sections/Pricing'
 class RootIndex extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div>
         <div className="application">
           <Helmet>
             <meta charSet="utf-8" />
@@ -19,7 +19,7 @@ class RootIndex extends React.Component {
           <NavBar />
           <Pricing />
         </section>
-      </React.Fragment>
+      </div>
     )
   }
 }
