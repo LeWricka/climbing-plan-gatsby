@@ -3,11 +3,12 @@ import withRoot from '../modules/withRoot'
 import NavBar from '../modules/sections/NavBar'
 import Helmet from 'react-helmet'
 import ContactData from '../modules/sections/ContactData'
+import styles from './contact.module.css'
 
 class RootIndex extends React.Component {
   render() {
     return (
-      <div>
+      <div className="root">
         <div className="application">
           <Helmet>
             <meta charSet="utf-8" />
