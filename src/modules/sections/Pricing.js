@@ -36,37 +36,58 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'baseline',
     marginBottom: theme.spacing(2),
   },
+  discount: {
+    color: theme.palette.success.main
+  }
 }))
 
 const tiers = [
   {
-    title: 'Free',
-    price: '0',
-    description: ['10 users included', '2 GB of storage', 'Help center access', 'Email support'],
+    title: ['2 weeks training'],
+    price: 'Free',
+    description: [
+      'Detailed workout summary',
+      'Daily workout schedules',
+      'Compatible with outdoor climbing',
+      'Prepared by pro coaches',
+      '3 auto-assessments',
+      'Training diary',
+      'trial workouts book'
+
+    ],
     buttonText: 'Sign up for free',
     buttonVariant: 'outlined',
   },
   {
-    title: 'Pro',
+    title: ['12 weeks', 'Premium training'],
     subheader: 'Most popular',
-    price: '15',
+    price: '$15/mo',
+    discount: ' Save 30%',
     description: [
-      '20 users included',
-      '10 GB of storage',
-      'Help center access',
-      'Priority email support',
+      'Everything in the Free trial',
+      'Handcrafted by pro coaches',
+      '+200 available workouts',
+      'Full workouts book',
+      'Detailed workout summary',
+      '12 week full of routines',
+      'Compatible with outdoor climbing',
+      'Priority support',
+      'Avoid waiting for upcoming trainings'
     ],
     buttonText: 'Get started',
     buttonVariant: 'contained',
   },
   {
-    title: 'Enterprise',
-    price: '30',
+    title: ['4 weeks', 'Essential'],
+    price: '$30/mo',
     description: [
-      '50 users included',
-      '30 GB of storage',
-      'Help center access',
-      'Phone & email support',
+      'Everything in the Free trial',
+      'Handcrafted by pro coaches',
+      '+200 available workouts',
+      'Full workouts book',
+      'Detailed workout summary',
+      '4 week full of routines',
+      'Compatible with outdoor climbing'
     ],
     buttonText: 'Contact us',
     buttonVariant: 'outlined',
@@ -90,7 +111,11 @@ export default function Pricing() {
             <Grid item key={tier.title} xs={12} sm={tier.title === 'Enterprise' ? 12 : 6} md={4}>
               <Card>
                 <CardHeader
-                  title={tier.title}
+                  title={tier.title.map((line) => (
+                      <Typography variant="h5" align="center" key={line}>
+                        {line}
+                      </Typography>
+                    ))}
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
@@ -99,16 +124,16 @@ export default function Pricing() {
                 />
                 <CardContent>
                   <div className={classes.cardPricing}>
-                    <Typography component="h2" variant="h3" color="textPrimary">
-                      ${tier.price}
-                    </Typography>
-                    <Typography variant="h6" color="textSecondary">
-                      /mo
+                    <Typography component="h3" variant="h5" color='textPrimary'>
+                      {tier.price}
                     </Typography>
                   </div>
+                  <Typography align="center" variant="h6" className={classes.discount}>
+                    {tier.discount}
+                  </Typography>
                   <ul>
                     {tier.description.map((line) => (
-                      <Typography component="li" variant="subtitle1" align="center" key={line}>
+                      <Typography  component="li" variant="subtitle1" key={line}>
                         {line}
                       </Typography>
                     ))}

@@ -55,6 +55,8 @@ class FaqIndex extends React.Component {
         <FaqHero className={styles.hero} />
         <Helmet title={'ClimbingPlan'} />
         <SimpleAccordion faqs={faqs} />
+        <Footer />
+
       </div>
     )
   }

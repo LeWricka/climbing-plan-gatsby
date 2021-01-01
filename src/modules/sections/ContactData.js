@@ -31,6 +31,12 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: theme.spacing(1),
   },
+  find_us: {
+    marginTop: theme.spacing(5),
+  },
+  find_us_mail: {
+    marginTop: theme.spacing(5),
+  },
   button: {
     marginTop: theme.spacing(10),
     maxWidth: 300,
@@ -51,14 +57,16 @@ export default function ContactData() {
         </Typography>
         <Container className={classes.content_container}>
           <Typography color="inherit">
-            <ListItem>
-              Find us on:
-              <a href="mailto:climbingprograms@gmail.com" target="_top">climbingprograms@gmail.com</a>
-            </ListItem>
+            climbingPlan is an startUp born to make quality
           </Typography>
-
           <Typography color="inherit">
-            {'+ 200 exercises for beginners and experienced climbers'}
+            personalised climbing training programs available to any climber
+          </Typography>
+          <Typography color="inherit" variant="h6" className={classes.find_us}>
+              Find us on:
+          </Typography>
+          <Typography color="inherit" variant="h6" className={classes.find_us_mail}>
+            <a href="mailto:climbingprogram@gmail.com" target="_top">climbingprogram@gmail.com</a>
           </Typography>
         </Container>
         <Button

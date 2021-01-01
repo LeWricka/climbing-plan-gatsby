@@ -4,6 +4,7 @@ import NavBar from '../modules/sections/NavBar'
 import styles from './pricing.module.css'
 import Helmet from 'react-helmet'
 import Pricing from '../modules/sections/Pricing'
+import Footer from '../modules/sections/Footer'
 
 class PricingIndex extends React.Component {
   render() {
@@ -19,6 +20,7 @@ class PricingIndex extends React.Component {
         <section>
           <NavBar />
           <Pricing />
+          <Footer />
         </section>
       </div>
     )

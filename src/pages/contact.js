@@ -4,6 +4,7 @@ import NavBar from '../modules/sections/NavBar'
 import Helmet from 'react-helmet'
 import ContactData from '../modules/sections/ContactData'
 import styles from './contact.module.css'
+import Footer from '../modules/sections/Footer'
 
 class RootIndex extends React.Component {
   render() {
@@ -17,8 +18,9 @@ class RootIndex extends React.Component {
           </Helmet>
         </div>
         <section>
-          <NavBar />
+          <NavBar threshold={200}/>
           <ContactData />
+          <Footer />
         </section>
       </div>
     )

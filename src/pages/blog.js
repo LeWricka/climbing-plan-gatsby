@@ -6,6 +6,7 @@ import styles from './blog.module.css'
 import ArticlePreview from '../components/article-preview'
 import BlogHero from '../components/climbing_plan/BlogHero'
 import NavBar from '../modules/sections/NavBar'
+import Footer from '../modules/sections/Footer'
 
 class BlogIndex extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class BlogIndex extends React.Component {
 
     return (
       <div>
-        <NavBar threshold={530} />
+        <NavBar threshold={200} />
         <container>
           <div>
             <Helmet title={siteTitle} />
@@ -34,6 +35,7 @@ class BlogIndex extends React.Component {
               </ul>
             </div>
           </div>
+        <Footer />
         </container>
       </div>
     )
