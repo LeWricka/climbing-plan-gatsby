@@ -41,7 +41,7 @@ export default function HomeBanner() {
             edges {
               node {
                 title
-                fluid (quality:100){
+                fluid (quality:100, maxWidth: 2000){
                   ...GatsbyContentfulFluid_withWebp
                 }
               }

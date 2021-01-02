@@ -59,7 +59,7 @@ export default function Services() {
             edges {
               node {
                 title
-                fluid(quality:100, maxWidth: 500) {
+                fluid(quality:100, maxWidth: 400) {
                   ...GatsbyContentfulFluid_withWebp
                 }
               }

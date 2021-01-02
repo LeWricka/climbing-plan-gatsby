@@ -9,7 +9,7 @@ function HomeIcon() {
             edges {
               node {
                 title
-                fluid {
+                fluid(quality:100, maxWidth: 50) {
                   ...GatsbyContentfulFluid
                 }
               }
