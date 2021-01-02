@@ -23,7 +23,7 @@ export default function Slider() {
             edges {
               node {
                 title
-                fluid(quality:100) {
+                fluid(quality:100, maxWidth: 800) {
                   ...GatsbyContentfulFluid_withWebp
                 }
               }
